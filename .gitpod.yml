@@ -1,0 +1,32 @@
+tasks:
+  - init: |
+      # Check prerequisites
+      git --version || (echo "Git not installed, installing..." && sudo apt-get update && sudo apt-get install -y git)
+      cargo --version || (echo "Rust not installed, installing..." && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && source $HOME/.cargo/env)
+      # Install Leo
+      echo "Installing Leo..."
+      git clone https://github.com/ProvableHQ/leo/
+      cd leo
+      git checkout testnet-beta
+      cargo install --path .
+      cd ..
+      # Install snarkOS
+      echo "Installing snarkOS..."
+      git clone https://github.com/ProvableHQ/snarkOS.git
+      cd snarkOS
+      git checkout testnet-beta
+      ./build_ubuntu.sh
+      cargo install --path .
+      echo "Setup complete!"
+
+vscode:
+  extensions:
+    - rust-lang.rust-analyzer
+    - ms-vscode.cpptools
+    - editorconfig.editorconfig
+
+ports:
+  - port: 4133
+    onOpen: ignore
+  - port: 3033
+    onOpen: ignore
