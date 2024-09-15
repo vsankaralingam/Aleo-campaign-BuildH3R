@@ -32,33 +32,42 @@ This project implements a first-price sealed-bid auction in Leo for the Aleo blo
 
 ### Prerequisites
 
-1. **Install Leo**: Follow the [Leo installation instructions](https://gist.github.com/laishawadhwa/0a47aa94cccf4206b079cf814604b6ef).
+ **Install Leo**: Follow the [Leo installation instructions](https://gist.github.com/laishawadhwa/0a47aa94cccf4206b079cf814604b6ef).
 
-### Running the Program
+### Step 1: Fork this Repository
 
-The auction program can be executed using the provided bash script. Ensure your environment is correctly set up with the necessary private keys and addresses.
+[Fork this repo](#) to get started. (Link will be added soon.)
 
-2. **Clone that repo**
+### Step 2: Create Accounts for Auctioneer and Bidders
 
-3. **Navigate to the Project Directory**:
+Using [Aleo tools](https://www.provable.tools/), we will create three accounts:
+- **1 Auctioneer account**
+- **2 Bidder accounts**
 
-    ```bash
-    cd Aleo-campaign-BuildH3R  
-    ```
-    
-           
-4. **Run the Script**:
+Make sure to obtain credits from the aleo faucet discord [puzzle-server](https://discord.gg/rXQyKHzE) [leo-server](https://discord.gg/Ra9bkaQ4) to fund these accounts.
 
-    ```bash
-    ./run.sh
-    ```
+### Step 3: Clean Up the Cloned Folder and Update Configurations
 
-    This script will execute the Leo program functions to conduct, bid, and finalize the auction.
+1. Navigate to the auction folder:
+   ```bash
+   cd auction
+   
 
-### Environment Configuration
+2. Delete the `build` Folder and Update the `.env` File
 
-The `.env` file contains the private key and address used for signing transactions. Update this file as needed:
+i). **Delete the `build` Folder**
 
-```bash
-NETWORK=testnet3
-PRIVATE_KEY=<your_private_key>
+   Inside the `auction` directory, remove the existing `build` folder to ensure that any old build artifacts do not interfere with your setup. Run the following command:
+   ```bash
+   rm -rf build
+   ```
+
+ ii). **Open the .env file in the auction directory and update it with the following content**
+  ```bash
+   NETWORK=testnet
+   PRIVATE_KEY=<your_private_key>
+   ENDPOINT=https://api.explorer.provable.com/v1
+
+   ```
+
+ 
