@@ -69,5 +69,22 @@ i). **Delete the `build` Folder**
    ENDPOINT=https://api.explorer.provable.com/v1
 
    ```
+### Change the Program Name
 
+iii). **Update the `main.leo` File**
+
+   - Open the `main.leo` file located in the `auction` directory.
+   - At the beginning of the file, update the program name to your preferred name. Ensure the name is 8 to 10 characters long to avoid credit issues.
+
+   **Example:**
+   If the original line is:
+   ```leo
+   program auction.aleo
+   ```
+
+  ##  **Change:**
+   
+  ```bash
+     program your_preferred_name.aleo
+  ```
  
