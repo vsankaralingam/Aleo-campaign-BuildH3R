@@ -36,7 +36,7 @@ This project implements a first-price sealed-bid auction in Leo for the Aleo blo
 
 ### Step 1: Fork this Repository
 
-[Fork this repo](#) to get started. (Link will be added soon.)
+[Fork this repo](https://github.com/vsankaralingam/Aleo-campaign-BuildH3R.git) to get started.
 
 ### Step 2: Create Accounts for Auctioneer and Bidders
 
