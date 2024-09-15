@@ -87,4 +87,94 @@ iii). **Update the `main.leo` File**
   ```bash
      program your_preferred_name.aleo
   ```
- 
+
+ ## The First Bid
+
+Have the first bidder place a bid of 10. 
+
+Swap in the private key and address of the first bidder to `.env`.
+
+```bash
+echo "
+NETWORK=testnet
+PRIVATE_KEY=APrivateKey1zkpG9Af9z5Ha4ejVyMCqVFXRKknSm8L1ELEwcc4htk9YhVK
+ENDPOINT=https://api.explorer.provable.com/v1
+" > .env
+```
+
+Call the `place_bid` program function with the first bidder and `10u64` arguments.
+
+```bash
+leo run place_bid aleo1yzlta2q5h8t0fqe0v6dyh9mtv4aggd53fgzr068jvplqhvqsnvzq7pj2ke 10u64 --network testnet
+```
+
+## The Second Bid
+
+Have the second bidder place a bid of 90.
+
+Swap in the private key of the second bidder to `.env`.
+
+```bash
+echo "
+NETWORK=testnet
+PRIVATE_KEY=APrivateKey1zkpAFshdsj2EqQzXh5zHceDapFWVCwR6wMCJFfkLYRKupug
+ENDPOINT=https://api.explorer.provable.com/v1
+" > .env
+```
+
+Call the `place_bid` program function with the second bidder and `90u64` arguments.
+
+```bash
+leo run place_bid aleo1esqchvevwn7n5p84e735w4dtwt2hdtu4dpguwgwy94tsxm2p7qpqmlrta4 90u64 --network testnet
+```
+
+## Step 3: Select the Winner
+
+Have the auctioneer select the winning bid.
+
+Swap in the private key of the auctioneer to `.env`.
+
+```bash
+echo "
+NETWORK=testnet
+PRIVATE_KEY=APrivateKey1zkp5wvamYgK3WCAdpBQxZqQX8XnuN2u11Y6QprZTriVwZVc
+ENDPOINT=https://api.explorer.provable.com/v1
+" > .env
+```
+
+Provide the two `Bid` records as input to the `resolve` transition function.
+
+```bash 
+leo run resolve "{
+    owner: aleo1fxs9s0w97lmkwlcmgn0z3nuxufdee5yck9wqrs0umevp7qs0sg9q5xxxzh.private,
+    bidder: aleo1yzlta2q5h8t0fqe0v6dyh9mtv4aggd53fgzr068jvplqhvqsnvzq7pj2ke.private,
+    amount: 10u64.private,
+    is_winner: false.private,
+    _nonce: 4668394794828730542675887906815309351994017139223602571716627453741502624516group.public
+}" "{
+    owner: aleo1fxs9s0w97lmkwlcmgn0z3nuxufdee5yck9wqrs0umevp7qs0sg9q5xxxzh.private,
+    bidder: aleo1esqchvevwn7n5p84e735w4dtwt2hdtu4dpguwgwy94tsxm2p7qpqmlrta4.private,
+    amount: 90u64.private,
+    is_winner: false.private,
+    _nonce: 5952811863753971450641238938606857357746712138665944763541786901326522216736group.public
+}"  --network testnet
+```
+
+## Step 4: Finish the Auction
+
+Call the `finish` transition function with the winning `Bid` record.
+
+```bash 
+leo run finish "{
+    owner: aleo1fxs9s0w97lmkwlcmgn0z3nuxufdee5yck9wqrs0umevp7qs0sg9q5xxxzh.private,
+    bidder: aleo1esqchvevwn7n5p84e735w4dtwt2hdtu4dpguwgwy94tsxm2p7qpqmlrta4.private,
+    amount: 90u64.private,
+    is_winner: false.private,
+    _nonce: 5952811863753971450641238938606857357746712138665944763541786901326522216736group.public
+}"  --network testnet
+```
+## Step 4: let's depoly 
+
+ ```bash
+ leo deploy --network testnet
+```
