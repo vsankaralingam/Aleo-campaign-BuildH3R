@@ -97,7 +97,7 @@ Swap in the private key and address of the first bidder to `.env`.
 ```bash
 echo "
 NETWORK=testnet
-PRIVATE_KEY=APrivateKey1zkpG9Af9z5Ha4ejVyMCqVFXRKknSm8L1ELEwcc4htk9YhVK
+PRIVATE_KEY=APrivateKey1zkpCd9KfAYUjjt5DBDY6gEiwsY7cgdZpwAZ863iHZw2ZpjJ
 ENDPOINT=https://api.explorer.provable.com/v1
 " > .env
 ```
@@ -105,7 +105,7 @@ ENDPOINT=https://api.explorer.provable.com/v1
 Call the `place_bid` program function with the first bidder and `10u64` arguments.
 
 ```bash
-leo run place_bid aleo1yzlta2q5h8t0fqe0v6dyh9mtv4aggd53fgzr068jvplqhvqsnvzq7pj2ke 10u64 --network testnet
+leo run place_bid aleo1dcuv6vat9lyk3h2zdfavlrz7luq252fthv0xn5dgmmqxyn6p2gyqvyd8lv 10u64 --network testnet
 ```
 
 ## The Second Bid
@@ -117,7 +117,7 @@ Swap in the private key of the second bidder to `.env`.
 ```bash
 echo "
 NETWORK=testnet
-PRIVATE_KEY=APrivateKey1zkpAFshdsj2EqQzXh5zHceDapFWVCwR6wMCJFfkLYRKupug
+PRIVATE_KEY=APrivateKey1zkpFtv6PSzx8GYgrUNbLJRvVFyfHQyd7bLoKGvMEMq4Paw9
 ENDPOINT=https://api.explorer.provable.com/v1
 " > .env
 ```
@@ -125,7 +125,7 @@ ENDPOINT=https://api.explorer.provable.com/v1
 Call the `place_bid` program function with the second bidder and `90u64` arguments.
 
 ```bash
-leo run place_bid aleo1esqchvevwn7n5p84e735w4dtwt2hdtu4dpguwgwy94tsxm2p7qpqmlrta4 90u64 --network testnet
+leo run place_bid aleo1sns527sgdawl307lt7tl5ja89ncw9jkkjj8f95qy2kmn83vshursxykxqr 90u64 --network testnet
 ```
 
 ## Step 3: Select the Winner
@@ -137,7 +137,7 @@ Swap in the private key of the auctioneer to `.env`.
 ```bash
 echo "
 NETWORK=testnet
-PRIVATE_KEY=APrivateKey1zkp5wvamYgK3WCAdpBQxZqQX8XnuN2u11Y6QprZTriVwZVc
+PRIVATE_KEY=APrivateKey1zkp3fPieKf723Es779d4VGrcGK94wGhfvm6AiaAuP16a71u
 ENDPOINT=https://api.explorer.provable.com/v1
 " > .env
 ```
