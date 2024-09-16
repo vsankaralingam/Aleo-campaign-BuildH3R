@@ -127,6 +127,7 @@ Call the `place_bid` program function with the second bidder and `90u64` argumen
 ```bash
 leo run place_bid aleo1sns527sgdawl307lt7tl5ja89ncw9jkkjj8f95qy2kmn83vshursxykxqr 90u64 --network testnet
 ```
+![image](https://github.com/user-attachments/assets/6a5ca991-9164-4934-9139-aa013e2f6e33)
 
 ## Step 3: Select the Winner
 
@@ -159,6 +160,7 @@ leo run resolve "{
     _nonce: 5952811863753971450641238938606857357746712138665944763541786901326522216736group.public
 }"  --network testnet
 ```
+![image](https://github.com/user-attachments/assets/43f13369-c06e-460c-92f0-394355f1084b)
 
 ## Step 4: Finish the Auction
 
@@ -173,8 +175,15 @@ leo run finish "{
     _nonce: 5952811863753971450641238938606857357746712138665944763541786901326522216736group.public
 }"  --network testnet
 ```
+![image](https://github.com/user-attachments/assets/ad2ee017-02c3-4e0f-98fd-ed1be5ce6f7e)
+
+
 ## Step 4: let's depoly 
 
  ```bash
  leo deploy --network testnet
 ```
+![image](https://github.com/user-attachments/assets/cadeb6cd-b997-4810-a661-61069d757a90)
+
+[depolyed program](https://testnet.aleo.info/program/finalprogram.aleo)
+
