@@ -105,7 +105,7 @@ ENDPOINT=https://api.explorer.provable.com/v1
 Call the `place_bid` program function with the first bidder and `10u64` arguments.
 
 ```bash
-leo run place_bid aleo1dcuv6vat9lyk3h2zdfavlrz7luq252fthv0xn5dgmmqxyn6p2gyqvyd8lv 10u64 --network testnet
+leo run place_bid aleo1gwjap0ql7axvtl2z2jc8eskye0ru77tqf4zmysug8szx067rgqgsf3ysx6 --network testnet
 ```
 
 ## The Second Bid
@@ -125,7 +125,7 @@ ENDPOINT=https://api.explorer.provable.com/v1
 Call the `place_bid` program function with the second bidder and `90u64` arguments.
 
 ```bash
-leo run place_bid aleo1sns527sgdawl307lt7tl5ja89ncw9jkkjj8f95qy2kmn83vshursxykxqr 90u64 --network testnet
+leo run place_bid aleo1rz8akajyrmz57ar6r39anauw42fxm5kkatwkm4sxdu035swyxyysdphhca 9u64 --network testnet
 ```
 ![image](https://github.com/user-attachments/assets/6a5ca991-9164-4934-9139-aa013e2f6e33)
 
@@ -146,19 +146,19 @@ ENDPOINT=https://api.explorer.provable.com/v1
 Provide the two `Bid` records as input to the `resolve` transition function.
 
 ```bash 
-leo run resolve "{
-    owner: aleo1fxs9s0w97lmkwlcmgn0z3nuxufdee5yck9wqrs0umevp7qs0sg9q5xxxzh.private,
-    bidder: aleo1yzlta2q5h8t0fqe0v6dyh9mtv4aggd53fgzr068jvplqhvqsnvzq7pj2ke.private,
-    amount: 10u64.private,
-    is_winner: false.private,
-    _nonce: 4668394794828730542675887906815309351994017139223602571716627453741502624516group.public
+ leo run resolve "{
+  owner: aleo19ccxqucv6fyuz6qzdq06vhtj9xxgf0vnwnktzwxyvnugmy8dxvqs3xlqgl.private,
+  bidder: aleo1gwjap0ql7axvtl2z2jc8eskye0ru77tqf4zmysug8szx067rgqgsf3ysx6.private,
+  amount: 11u64.private,
+  is_winner: false.private,
+  _nonce: 1954135135404140564916517997808782776661568994681110724070659566819130079333group.public
 }" "{
-    owner: aleo1fxs9s0w97lmkwlcmgn0z3nuxufdee5yck9wqrs0umevp7qs0sg9q5xxxzh.private,
-    bidder: aleo1esqchvevwn7n5p84e735w4dtwt2hdtu4dpguwgwy94tsxm2p7qpqmlrta4.private,
-    amount: 90u64.private,
-    is_winner: false.private,
-    _nonce: 5952811863753971450641238938606857357746712138665944763541786901326522216736group.public
-}"  --network testnet
+  owner: aleo19ccxqucv6fyuz6qzdq06vhtj9xxgf0vnwnktzwxyvnugmy8dxvqs3xlqgl.private,
+  bidder: aleo1rz8akajyrmz57ar6r39anauw42fxm5kkatwkm4sxdu035swyxyysdphhca.private,
+  amount: 9u64.private,
+  is_winner: false.private,
+  _nonce: 6290155981947508331292576007861658926309592807182725723330418403565256573454group.public
+}" --network testnet
 ```
 ![image](https://github.com/user-attachments/assets/43f13369-c06e-460c-92f0-394355f1084b)
 
@@ -168,11 +168,11 @@ Call the `finish` transition function with the winning `Bid` record.
 
 ```bash 
 leo run finish "{
-    owner: aleo1fxs9s0w97lmkwlcmgn0z3nuxufdee5yck9wqrs0umevp7qs0sg9q5xxxzh.private,
-    bidder: aleo1esqchvevwn7n5p84e735w4dtwt2hdtu4dpguwgwy94tsxm2p7qpqmlrta4.private,
-    amount: 90u64.private,
-    is_winner: false.private,
-    _nonce: 5952811863753971450641238938606857357746712138665944763541786901326522216736group.public
+  owner: aleo19ccxqucv6fyuz6qzdq06vhtj9xxgf0vnwnktzwxyvnugmy8dxvqs3xlqgl.private,
+  bidder: aleo1gwjap0ql7axvtl2z2jc8eskye0ru77tqf4zmysug8szx067rgqgsf3ysx6.private,
+  amount: 11u64.private,
+  is_winner: false.private,
+  _nonce: 1460812918611587634891459256611043619250501694318610170039107019259134344784group.public
 }"  --network testnet
 ```
 ![image](https://github.com/user-attachments/assets/ad2ee017-02c3-4e0f-98fd-ed1be5ce6f7e)
